@@ -1,0 +1,60 @@
+<header class="header">
+  <img alt="employees-logo" src="assets/employees.png" class="header__logo">
+</header>
+
+<div class="menu">
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="openDialog()">Open alert</button>
+  </mat-menu>
+</div>
+
+<div class="container">
+  <div class="container__options">
+
+    <div class="container__options__box">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <mat-hint>Enter the id number</mat-hint>
+        <input matInput type="number" (keyup)="setFilterValue($event)" placeholder="Ex. 12" #input>
+      </mat-form-field>
+    </div>
+
+    <div class="container__options__button">
+      <button mat-raised-button type="submit" (click)="applyFilter()">SEARCH</button>
+    </div>
+  </div>
+  <div class="container__table">
+    <mat-table [dataSource]="dataSource">
+      <!-- User Id Definition -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> User Id</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Definition -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.employee_name}} </mat-cell>
+      </ng-container>
+
+      <!-- Salary Definition -->
+      <ng-container matColumnDef="salary">
+        <mat-header-cell *matHeaderCellDef> Salary</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.employee_salary}} </mat-cell>
+      </ng-container>
+
+      <!-- Age Definition -->
+      <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef> Age</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.employee_age}} </mat-cell>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columns"></mat-row>
+    </mat-table>
+  </div>
+</div>
+
+<footer class="footer"></footer>
