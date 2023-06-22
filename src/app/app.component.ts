@@ -41,7 +41,6 @@ export class AppComponent {
     } else {
       this.employees = await this.getEmployeeById(this.filterValue);
     }
-    console.log('PREVIO A CARGAR DATA', this.employees);
     await this.updateTableData();
   }
 

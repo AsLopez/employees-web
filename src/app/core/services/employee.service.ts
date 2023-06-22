@@ -30,7 +30,6 @@ export class EmployeeService {
         new HttpRequestParamsBuilder(ApiDomain.Company, API_PATHS.employeeById.replace('{id}', String(employeeId)))
           .build()
       );
-      console.log('RESULTADO BY ID', response);
       return Promise.resolve(response.body);
     } catch (err) {
       return Promise.reject();

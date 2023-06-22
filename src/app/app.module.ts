@@ -13,7 +13,6 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {DialogComponent} from './core/components/dialog/dialog.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
-import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatButtonModule,
     MatMenuModule,
     MatDialogModule,
-    HttpClientModule,
-    AppRoutingModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
