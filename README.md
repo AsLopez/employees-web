@@ -19,5 +19,5 @@ npm start
 ### Test
 
 ```sh
-npm run test:watch
+npm run test
 ```
