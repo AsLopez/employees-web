@@ -1,6 +1,6 @@
 export const environment = {
   endpoints: {
-    employeeApi: 'http://localhost:8080'
+    employeeApi: 'http://localhost:8080/EM'
   },
   production: false
 };
